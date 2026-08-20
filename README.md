@@ -9,3 +9,4 @@ Hair Haven Accessories is created and managed by Darryl Naval, a Web Development
 Created by Darryl Naval, 2026.
 
 Live site: https://darrylnaval-16.github.io/hair-haven-accessories/
+    
