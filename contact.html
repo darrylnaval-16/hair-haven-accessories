@@ -31,30 +31,80 @@
             <h2>Contact Us</h2>
 
             <p>
-                Have a question about our hair accessories? You can reach
-                Hair Haven Accessories using any of the contact methods below.
+                Have a question about our hair accessories?
+                Fill out the form below and we will be happy to hear from you.
             </p>
 
-            <ul>
+            <form id="contactForm">
 
-                <li>
-                    Email:
-                    <a href="mailto:hairhavenaccessories@gmail.com">
-                        hairhavenaccessories@gmail.com
-                    </a>
-                </li>
+                <fieldset>
 
-                <li>
-                    Facebook:
-                    Hair Haven Accessories
-                </li>
+                    <legend>Your Details</legend>
 
-                <li>
-                    Phone:
-                    123-3456-6789
-                </li>
+                    <p>
+                        <label for="name">Name</label><br>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            required
+                        >
+                    </p>
 
-            </ul>
+                    <p>
+                        <label for="email">Email</label><br>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            required
+                        >
+                    </p>
+
+                    <p>
+                        <label for="subject">Subject</label><br>
+                        <select
+                            id="subject"
+                            name="subject"
+                            required
+                        >
+                            <option value="">Please choose a subject</option>
+                            <option value="product-question">
+                                Product Question
+                            </option>
+                            <option value="order-status">
+                                Order Status
+                            </option>
+                            <option value="product-availability">
+                                Product Availability
+                            </option>
+                            <option value="other">
+                                Something Else
+                            </option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="message">Message</label><br>
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="6"
+                            required
+                        ></textarea>
+                    </p>
+
+                    <p>
+                        <button type="submit">Send message</button>
+                    </p>
+
+                </fieldset>
+
+            </form>
+
+            <p id="successMessage" hidden>
+                Your message has been sent successfully!
+            </p>
 
         </section>
 
@@ -67,6 +117,21 @@
         </p>
 
     </footer>
+
+    <script>
+        const contactForm = document.getElementById("contactForm");
+        const successMessage = document.getElementById("successMessage");
+
+        contactForm.addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            successMessage.hidden = false;
+
+            contactForm.reset();
+
+        });
+    </script>
 
 </body>
 
