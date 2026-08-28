@@ -1,11 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Classic Claw Clip | Hair Haven Accessories</title>
+
 </head>
 
 <body>
@@ -15,14 +19,27 @@
         <h1>Hair Haven Accessories</h1>
 
         <nav>
+
             <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../about.html">About</a></li>
-                <li><a href="../contact.html">Contact</a></li>
+
+                <li>
+                    <a href="../index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="../about.html">About</a>
+                </li>
+
+                <li>
+                    <a href="../contact.html">Contact</a>
+                </li>
+
             </ul>
+
         </nav>
 
     </header>
+
 
     <main>
 
@@ -61,6 +78,7 @@
             </p>
 
         </section>
+
 
         <section>
 
@@ -110,14 +128,207 @@
 
                 <tr>
                     <td>Price</td>
-                    <td>₱50 per piece and 190 per set</td>
+                    <td>₱50 per piece and ₱190 per set</td>
                 </tr>
 
             </table>
 
         </section>
 
+
+        <!-- ORDER ENQUIRY FORM -->
+
+        <section>
+
+            <h2>Order Enquiry</h2>
+
+            <p>
+                Interested in ordering the Classic Claw Clip?
+                Fill out the form below to ask about your order.
+            </p>
+
+
+            <form id="orderForm">
+
+                <fieldset>
+
+                    <legend>Order Details</legend>
+
+
+                    <p>
+
+                        <label for="quantity">
+                            Quantity
+                        </label>
+
+                        <br>
+
+                        <input
+                            type="number"
+                            id="quantity"
+                            name="quantity"
+                            min="1"
+                            max="20"
+                            required
+                        >
+
+                    </p>
+
+
+                    <fieldset>
+
+                        <legend>
+                            How would you like your order delivered?
+                        </legend>
+
+
+                        <p>
+
+                            <input
+                                type="radio"
+                                id="standardDelivery"
+                                name="delivery"
+                                value="standard"
+                                required
+                            >
+
+                            <label for="standardDelivery">
+                                Standard Delivery
+                            </label>
+
+                        </p>
+
+
+                        <p>
+
+                            <input
+                                type="radio"
+                                id="expressDelivery"
+                                name="delivery"
+                                value="express"
+                            >
+
+                            <label for="expressDelivery">
+                                Express Delivery
+                            </label>
+
+                        </p>
+
+
+                        <p>
+
+                            <input
+                                type="radio"
+                                id="pickup"
+                                name="delivery"
+                                value="pickup"
+                            >
+
+                            <label for="pickup">
+                                Store Pickup
+                            </label>
+
+                        </p>
+
+                    </fieldset>
+
+
+                    <fieldset>
+
+                        <legend>
+                            Optional Extras
+                        </legend>
+
+
+                        <p>
+
+                            <input
+                                type="checkbox"
+                                id="giftWrapping"
+                                name="extras"
+                                value="gift-wrapping"
+                            >
+
+                            <label for="giftWrapping">
+                                Gift Wrapping
+                            </label>
+
+                        </p>
+
+
+                        <p>
+
+                            <input
+                                type="checkbox"
+                                id="expressHandling"
+                                name="extras"
+                                value="express-handling"
+                            >
+
+                            <label for="expressHandling">
+                                Express Handling
+                            </label>
+
+                        </p>
+
+
+                        <p>
+
+                            <input
+                                type="checkbox"
+                                id="thankYouCard"
+                                name="extras"
+                                value="thank-you-card"
+                            >
+
+                            <label for="thankYouCard">
+                                Thank-you Card
+                            </label>
+
+                        </p>
+
+                    </fieldset>
+
+
+                    <p>
+
+                        <label for="email">
+                            Contact Email
+                        </label>
+
+                        <br>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            required
+                        >
+
+                    </p>
+
+
+                    <p>
+
+                        <button type="submit">
+                            Submit Order Enquiry
+                        </button>
+
+                    </p>
+
+                </fieldset>
+
+            </form>
+
+
+            <p id="orderSuccessMessage" hidden>
+                Your order enquiry has been sent successfully!
+            </p>
+
+        </section>
+
     </main>
+
 
     <footer>
 
@@ -126,6 +337,27 @@
         </p>
 
     </footer>
+
+
+    <script>
+
+        const orderForm = document.getElementById("orderForm");
+
+        const orderSuccessMessage =
+            document.getElementById("orderSuccessMessage");
+
+
+        orderForm.addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            orderSuccessMessage.hidden = false;
+
+            orderForm.reset();
+
+        });
+
+    </script>
 
 </body>
 
