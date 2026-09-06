@@ -3,9 +3,9 @@
    ========================================= */
 
 :root {
-    --brand-color: #8e5aa8;
+    --brand: #8e5aa8;
     --dark-ink: #2f2433;
-    --muted-grey: #777077;
+    --muted-grey: #5f5861;
     --light-background: #f8f3fa;
 }
 
@@ -37,7 +37,7 @@ img {
    ========================================= */
 
 header {
-    background-color: var(--brand-color);
+    background-color: var(--brand);
     color: white;
     padding: 30px 20px;
     text-align: center;
@@ -85,7 +85,7 @@ section {
 }
 
 section h2 {
-    color: var(--brand-color);
+    color: var(--brand);
     margin-bottom: 20px;
 }
 
@@ -103,36 +103,40 @@ footer p {
 
 
 /* =========================================
-   4. COMPONENTS — PRODUCT CARDS
+   4. PRODUCT CARDS
    ========================================= */
 
-section:has(article) {
+section:has(.product-card) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 25px;
 }
 
-section:has(article) h2 {
+section:has(.product-card) h2 {
     grid-column: 1 / -1;
 }
 
-article {
+.product-card {
     background-color: white;
-    padding: 20px;
     border-radius: 12px;
+    border-left: 6px solid var(--brand);
+    padding: 20px;
+    margin-bottom: 10px;
     box-shadow: 0 4px 12px rgba(47, 36, 51, 0.12);
 }
 
-article h3 {
-    color: var(--brand-color);
+.product-card h3 {
+    color: var(--brand);
+    font-size: 1.35rem;
     margin-top: 0;
+    margin-bottom: 10px;
 }
 
-article p {
-    color: var(--muted-grey);
+.product-card p {
+    color: var(--dark-ink);
 }
 
-article img {
+.product-card img {
     display: block;
     width: 100%;
     max-width: 300px;
@@ -140,19 +144,19 @@ article img {
     border-radius: 10px;
 }
 
-article a {
-    color: var(--brand-color);
+.product-card a {
+    color: var(--brand);
     font-weight: bold;
     text-decoration: none;
 }
 
-article a:hover {
+.product-card a:hover {
     text-decoration: underline;
 }
 
 
 /* =========================================
-   5. FORMS AND OTHER ELEMENTS
+   5. CONTACT AND ORDER FORMS
    ========================================= */
 
 form {
@@ -163,15 +167,20 @@ form {
 }
 
 fieldset {
-    border: 1px solid #ddd3e2;
-    border-radius: 8px;
+    border: 1px solid #cfc5d2;
+    border-radius: 10px;
     padding: 20px;
+    margin-bottom: 20px;
 }
 
 legend {
-    color: var(--brand-color);
+    color: var(--brand);
     font-weight: bold;
     padding: 0 8px;
+}
+
+label {
+    font-weight: bold;
 }
 
 input,
@@ -179,23 +188,43 @@ select,
 textarea {
     width: 100%;
     max-width: 600px;
-    padding: 10px;
-    border: 1px solid #cfc5d2;
+    padding: 12px;
+    border: 1px solid #a99fac;
     border-radius: 6px;
     font: inherit;
+    color: var(--dark-ink);
+    background-color: white;
 }
 
 textarea {
     resize: vertical;
 }
 
+
+/* =========================================
+   6. FORM FOCUS STATE
+   ========================================= */
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 3px solid var(--brand);
+    outline-offset: 2px;
+}
+
+
+/* =========================================
+   7. SUBMIT BUTTON
+   ========================================= */
+
 button {
-    background-color: var(--brand-color);
+    background-color: var(--brand);
     color: white;
+    padding: 12px 20px;
     border: none;
-    padding: 10px 18px;
     border-radius: 6px;
     cursor: pointer;
+    font: inherit;
     font-weight: bold;
 }
 
@@ -203,9 +232,14 @@ button:hover {
     opacity: 0.9;
 }
 
+button:focus {
+    outline: 3px solid var(--brand);
+    outline-offset: 2px;
+}
+
 
 /* =========================================
-   6. TABLE
+   8. TABLE
    ========================================= */
 
 table {
@@ -217,23 +251,23 @@ table {
 th,
 td {
     padding: 12px;
-    border: 1px solid #ddd3e2;
+    border: 1px solid #cfc5d2;
     text-align: left;
 }
 
 th {
-    background-color: var(--brand-color);
+    background-color: var(--brand);
     color: white;
 }
 
 
 /* =========================================
-   7. RESPONSIVE DESIGN
+   9. RESPONSIVE DESIGN
    ========================================= */
 
 @media (max-width: 700px) {
 
-    section:has(article) {
+    section:has(.product-card) {
         grid-template-columns: 1fr;
     }
 
