@@ -33,7 +33,7 @@ img {
 
 
 /* =========================================
-   3. LAYOUT REGIONS
+   3. FLEXBOX HEADER
    ========================================= */
 
 header {
@@ -41,7 +41,6 @@ header {
     color: white;
     padding: 30px 20px;
 
-    /* FLEXBOX HEADER */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -54,7 +53,7 @@ header h1 {
 
 
 /* =========================================
-   3.1 NAVIGATION FLEXBOX
+   3.1 NAVIGATION
    ========================================= */
 
 header nav ul {
@@ -145,25 +144,29 @@ footer p {
 
 
 /* =========================================
-   4. PRODUCT CARDS
+   4. PRODUCT GRID - FLEXBOX
    ========================================= */
 
-.products-section {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
 }
 
-.products-section h2 {
-    grid-column: 1 / -1;
-}
+
+/* =========================================
+   4.1 PRODUCT CARDS
+   ========================================= */
 
 .product-card {
+    flex: 1 1 240px;
+
     background-color: white;
     border-radius: 12px;
     border-left: 6px solid var(--brand);
     padding: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 0;
+
     box-shadow: 0 4px 12px rgba(47, 36, 51, 0.12);
 }
 
@@ -300,24 +303,4 @@ td {
 th {
     background-color: var(--brand);
     color: white;
-}
-
-
-/* =========================================
-   9. RESPONSIVE DESIGN
-   ========================================= */
-
-@media (max-width: 700px) {
-
-    .products-section {
-        grid-template-columns: 1fr;
-    }
-
-    header {
-        padding: 25px 15px;
-    }
-
-    main {
-        padding: 25px 15px;
-    }
 }
