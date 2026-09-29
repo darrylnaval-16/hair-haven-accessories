@@ -2,127 +2,228 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Contact | Hair Haven Accessories</title>
 
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-    <header>
+    <div class="page">
 
-        <h1>Hair Haven Accessories</h1>
+        <!-- HEADER -->
 
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+        <header>
 
-    </header>
+            <h1>Hair Haven Accessories</h1>
 
-    <main>
+            <nav>
 
-        <section>
+                <ul>
 
-            <h2>Contact Us</h2>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </header>
+
+
+        <!-- SIDEBAR -->
+
+        <aside>
+
+            <h2>Contact Guide</h2>
 
             <p>
-                Have a question about our hair accessories?
-                Fill out the form below and we will be happy to hear from you.
+                Have a question about our products? You can use the
+                contact form to send your message.
             </p>
 
-            <form id="contactForm">
+            <h3>Questions About</h3>
 
-                <fieldset>
+            <ul>
+                <li>Products</li>
+                <li>Orders</li>
+                <li>Availability</li>
+                <li>Other concerns</li>
+            </ul>
 
-                    <legend>Your Details</legend>
+            <h3>Shop Information</h3>
 
-                    <p>
-                        <label for="name">Name</label><br>
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            required
-                        >
-                    </p>
-
-                    <p>
-                        <label for="email">Email</label><br>
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            required
-                        >
-                    </p>
-
-                    <p>
-                        <label for="subject">Subject</label><br>
-                        <select
-                            id="subject"
-                            name="subject"
-                            required
-                        >
-                            <option value="">Please choose a subject</option>
-                            <option value="product-question">
-                                Product Question
-                            </option>
-                            <option value="order-status">
-                                Order Status
-                            </option>
-                            <option value="product-availability">
-                                Product Availability
-                            </option>
-                            <option value="other">
-                                Something Else
-                            </option>
-                        </select>
-                    </p>
-
-                    <p>
-                        <label for="message">Message</label><br>
-                        <textarea
-                            id="message"
-                            name="message"
-                            rows="6"
-                            required
-                        ></textarea>
-                    </p>
-
-                    <p>
-                        <button type="submit">Send message</button>
-                    </p>
-
-                </fieldset>
-
-            </form>
-
-            <p id="successMessage" hidden>
-                Your message has been sent successfully!
+            <p>
+                Hair Haven Accessories offers simple and affordable
+                hair accessories for everyday use.
             </p>
 
-        </section>
+        </aside>
 
-    </main>
 
-    <footer>
+        <!-- MAIN -->
 
-        <p>
-            &copy; 2026 Hair Haven Accessories. Created by Darryl Naval.
-        </p>
+        <main>
 
-    </footer>
+            <section>
+
+                <h2>Contact Us</h2>
+
+                <p>
+                    Have a question about our hair accessories?
+                    Fill out the form below and we will be happy to hear from you.
+                </p>
+
+                <form id="contactForm">
+
+                    <fieldset>
+
+                        <legend>Your Details</legend>
+
+                        <p>
+
+                            <label for="name">
+                                Name
+                            </label>
+
+                            <br>
+
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                required
+                            >
+
+                        </p>
+
+                        <p>
+
+                            <label for="email">
+                                Email
+                            </label>
+
+                            <br>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                required
+                            >
+
+                        </p>
+
+                        <p>
+
+                            <label for="subject">
+                                Subject
+                            </label>
+
+                            <br>
+
+                            <select
+                                id="subject"
+                                name="subject"
+                                required
+                            >
+
+                                <option value="">
+                                    Please choose a subject
+                                </option>
+
+                                <option value="product-question">
+                                    Product Question
+                                </option>
+
+                                <option value="order-status">
+                                    Order Status
+                                </option>
+
+                                <option value="product-availability">
+                                    Product Availability
+                                </option>
+
+                                <option value="other">
+                                    Something Else
+                                </option>
+
+                            </select>
+
+                        </p>
+
+                        <p>
+
+                            <label for="message">
+                                Message
+                            </label>
+
+                            <br>
+
+                            <textarea
+                                id="message"
+                                name="message"
+                                rows="6"
+                                required
+                            ></textarea>
+
+                        </p>
+
+                        <p>
+
+                            <button type="submit">
+                                Send message
+                            </button>
+
+                        </p>
+
+                    </fieldset>
+
+                </form>
+
+                <p id="successMessage" hidden>
+                    Your message has been sent successfully!
+                </p>
+
+            </section>
+
+        </main>
+
+
+        <!-- FOOTER -->
+
+        <footer>
+
+            <p>
+                &copy; 2026 Hair Haven Accessories. Created by Darryl Naval.
+            </p>
+
+        </footer>
+
+    </div>
+
 
     <script>
+
         const contactForm = document.getElementById("contactForm");
-        const successMessage = document.getElementById("successMessage");
+
+        const successMessage =
+            document.getElementById("successMessage");
+
 
         contactForm.addEventListener("submit", function(event) {
 
@@ -133,6 +234,7 @@
             contactForm.reset();
 
         });
+
     </script>
 
 </body>

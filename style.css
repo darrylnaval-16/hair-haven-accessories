@@ -18,6 +18,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
@@ -33,7 +37,48 @@ img {
 
 
 /* =========================================
-   3. FLEXBOX HEADER
+   3. PAGE GRID LAYOUT
+   ========================================= */
+
+.page {
+    display: grid;
+
+    grid-template-columns: 220px 1fr;
+
+    grid-template-areas:
+        "masthead masthead"
+        "side     main"
+        "foot     foot";
+
+    gap: 16px;
+
+    min-height: 100vh;
+}
+
+
+/* =========================================
+   3.1 GRID AREA ASSIGNMENTS
+   ========================================= */
+
+header {
+    grid-area: masthead;
+}
+
+aside {
+    grid-area: side;
+}
+
+main {
+    grid-area: main;
+}
+
+footer {
+    grid-area: foot;
+}
+
+
+/* =========================================
+   3.2 FLEXBOX HEADER
    ========================================= */
 
 header {
@@ -44,6 +89,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    gap: 20px;
 }
 
 header h1 {
@@ -53,7 +100,7 @@ header h1 {
 
 
 /* =========================================
-   3.1 NAVIGATION
+   3.3 NAVIGATION - FLEXBOX
    ========================================= */
 
 header nav ul {
@@ -82,12 +129,49 @@ header nav a:hover {
 
 
 /* =========================================
-   3.2 MAIN CONTENT
+   3.4 SIDEBAR
+   ========================================= */
+
+aside {
+    background-color: white;
+    border-left: 6px solid var(--brand);
+    border-radius: 12px;
+
+    padding: 24px;
+
+    box-shadow: 0 4px 12px rgba(47, 36, 51, 0.10);
+}
+
+aside h2 {
+    color: var(--brand);
+    margin-top: 0;
+}
+
+aside h3 {
+    color: var(--dark-ink);
+    margin-top: 24px;
+    margin-bottom: 8px;
+}
+
+aside p {
+    color: var(--muted-grey);
+}
+
+aside ul {
+    padding-left: 20px;
+}
+
+aside li {
+    margin-bottom: 8px;
+}
+
+
+/* =========================================
+   4. MAIN CONTENT
    ========================================= */
 
 main {
-    max-width: 1100px;
-    margin: 0 auto;
+    min-width: 0;
     padding: 40px 20px;
 }
 
@@ -95,9 +179,14 @@ section {
     margin-bottom: 40px;
 }
 
+section h2 {
+    color: var(--brand);
+    margin-bottom: 20px;
+}
+
 
 /* =========================================
-   3.3 CENTERED HERO SECTION
+   4.1 CENTERED HERO SECTION
    ========================================= */
 
 .hero-section {
@@ -117,23 +206,15 @@ section {
 
 
 /* =========================================
-   3.4 SECTION HEADINGS
-   ========================================= */
-
-section h2 {
-    color: var(--brand);
-    margin-bottom: 20px;
-}
-
-
-/* =========================================
-   3.5 FOOTER
+   5. FOOTER
    ========================================= */
 
 footer {
     background-color: var(--dark-ink);
     color: white;
+
     text-align: center;
+
     padding: 20px;
     margin-top: 40px;
 }
@@ -144,7 +225,7 @@ footer p {
 
 
 /* =========================================
-   4. PRODUCT GRID - FLEXBOX
+   6. PRODUCT GRID - FLEXBOX
    ========================================= */
 
 .product-grid {
@@ -155,15 +236,17 @@ footer p {
 
 
 /* =========================================
-   4.1 PRODUCT CARDS
+   6.1 PRODUCT CARDS
    ========================================= */
 
 .product-card {
     flex: 1 1 240px;
 
     background-color: white;
+
     border-radius: 12px;
     border-left: 6px solid var(--brand);
+
     padding: 20px;
     margin-bottom: 0;
 
@@ -172,7 +255,9 @@ footer p {
 
 .product-card h3 {
     color: var(--brand);
+
     font-size: 1.35rem;
+
     margin-top: 0;
     margin-bottom: 10px;
 }
@@ -183,15 +268,20 @@ footer p {
 
 .product-card img {
     display: block;
+
     width: 100%;
     max-width: 300px;
+
     margin: 15px auto;
+
     border-radius: 10px;
 }
 
 .product-card a {
     color: var(--brand);
+
     font-weight: bold;
+
     text-decoration: none;
 }
 
@@ -201,26 +291,34 @@ footer p {
 
 
 /* =========================================
-   5. CONTACT AND ORDER FORMS
+   7. CONTACT AND ORDER FORMS
    ========================================= */
 
 form {
     background-color: white;
+
     padding: 25px;
+
     border-radius: 12px;
+
     box-shadow: 0 4px 12px rgba(47, 36, 51, 0.10);
 }
 
 fieldset {
     border: 1px solid #cfc5d2;
+
     border-radius: 10px;
+
     padding: 20px;
+
     margin-bottom: 20px;
 }
 
 legend {
     color: var(--brand);
+
     font-weight: bold;
+
     padding: 0 8px;
 }
 
@@ -232,12 +330,19 @@ input,
 select,
 textarea {
     width: 100%;
+
     max-width: 600px;
+
     padding: 12px;
+
     border: 1px solid #a99fac;
+
     border-radius: 6px;
+
     font: inherit;
+
     color: var(--dark-ink);
+
     background-color: white;
 }
 
@@ -247,7 +352,7 @@ textarea {
 
 
 /* =========================================
-   6. FORM FOCUS STATE
+   8. FORM FOCUS STATE
    ========================================= */
 
 input:focus,
@@ -259,17 +364,24 @@ select:focus {
 
 
 /* =========================================
-   7. SUBMIT BUTTON
+   9. SUBMIT BUTTON
    ========================================= */
 
 button {
     background-color: var(--brand);
+
     color: white;
+
     padding: 12px 20px;
+
     border: none;
+
     border-radius: 6px;
+
     cursor: pointer;
+
     font: inherit;
+
     font-weight: bold;
 }
 
@@ -284,23 +396,28 @@ button:focus {
 
 
 /* =========================================
-   8. TABLE
+   10. TABLE
    ========================================= */
 
 table {
     width: 100%;
+
     border-collapse: collapse;
+
     background-color: white;
 }
 
 th,
 td {
     padding: 12px;
+
     border: 1px solid #cfc5d2;
+
     text-align: left;
 }
 
 th {
     background-color: var(--brand);
+
     color: white;
 }
