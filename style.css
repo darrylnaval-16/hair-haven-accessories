@@ -28,31 +28,44 @@ body {
     line-height: 1.6;
     color: var(--dark-ink);
     background-color: var(--light-background);
+
+    /* Prevent sideways scrolling */
+    overflow-x: hidden;
 }
 
 img {
+    display: block;
     max-width: 100%;
     height: auto;
 }
 
 
 /* =========================================
-   3. PAGE GRID LAYOUT
+   3. MOBILE-FIRST PAGE GRID
    ========================================= */
+
+/*
+   Base layout: mobile
+
+   Main content comes BEFORE the sidebar.
+*/
 
 .page {
     display: grid;
 
-    grid-template-columns: 220px 1fr;
+    grid-template-columns: 1fr;
 
     grid-template-areas:
-        "masthead masthead"
-        "side     main"
-        "foot     foot";
+        "masthead"
+        "main"
+        "side"
+        "foot";
 
     gap: 16px;
 
     min-height: 100vh;
+
+    width: 100%;
 }
 
 
@@ -64,12 +77,12 @@ header {
     grid-area: masthead;
 }
 
-aside {
-    grid-area: side;
-}
-
 main {
     grid-area: main;
+}
+
+aside {
+    grid-area: side;
 }
 
 footer {
@@ -84,18 +97,25 @@ footer {
 header {
     background-color: var(--brand);
     color: white;
-    padding: 30px 20px;
+
+    padding: 24px 16px;
 
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
 
-    gap: 20px;
+    gap: 16px;
+
+    min-width: 0;
 }
 
 header h1 {
     margin: 0;
-    font-size: 2rem;
+
+    font-size: 1.6rem;
+
+    text-align: center;
 }
 
 
@@ -103,11 +123,19 @@ header h1 {
    3.3 NAVIGATION - FLEXBOX
    ========================================= */
 
+header nav {
+    width: 100%;
+}
+
 header nav ul {
     display: flex;
-    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    gap: 8px;
 
     list-style: none;
+
     padding: 0;
     margin: 0;
 }
@@ -117,10 +145,17 @@ header nav li {
 }
 
 header nav a {
+    display: block;
+
     color: white;
+
     text-decoration: none;
+
     font-weight: bold;
-    padding: 8px 12px;
+
+    padding: 8px 10px;
+
+    overflow-wrap: anywhere;
 }
 
 header nav a:hover {
@@ -134,31 +169,46 @@ header nav a:hover {
 
 aside {
     background-color: white;
+
     border-left: 6px solid var(--brand);
+
     border-radius: 12px;
 
-    padding: 24px;
+    padding: 20px 16px;
+
+    margin: 0 16px;
+
+    min-width: 0;
 
     box-shadow: 0 4px 12px rgba(47, 36, 51, 0.10);
 }
 
 aside h2 {
     color: var(--brand);
+
     margin-top: 0;
+
+    overflow-wrap: anywhere;
 }
 
 aside h3 {
     color: var(--dark-ink);
+
     margin-top: 24px;
+
     margin-bottom: 8px;
 }
 
 aside p {
     color: var(--muted-grey);
+
+    overflow-wrap: anywhere;
 }
 
 aside ul {
     padding-left: 20px;
+
+    margin-bottom: 0;
 }
 
 aside li {
@@ -172,36 +222,53 @@ aside li {
 
 main {
     min-width: 0;
-    padding: 40px 20px;
+
+    width: 100%;
+
+    padding: 24px 16px;
 }
 
 section {
     margin-bottom: 40px;
+
+    min-width: 0;
 }
 
 section h2 {
     color: var(--brand);
+
     margin-bottom: 20px;
+
+    overflow-wrap: anywhere;
 }
 
 
 /* =========================================
-   4.1 CENTERED HERO SECTION
+   4.1 HERO SECTION
    ========================================= */
 
 .hero-section {
-    min-height: 200px;
+    min-height: 180px;
 
     display: flex;
+
     justify-content: center;
+
     align-items: center;
 
     text-align: center;
+
+    padding: 20px;
 }
 
 .hero-section h2 {
     color: var(--brand);
+
     margin: 0;
+
+    font-size: 1.7rem;
+
+    overflow-wrap: anywhere;
 }
 
 
@@ -211,16 +278,22 @@ section h2 {
 
 footer {
     background-color: var(--dark-ink);
+
     color: white;
 
     text-align: center;
 
-    padding: 20px;
-    margin-top: 40px;
+    padding: 20px 16px;
+
+    margin-top: 24px;
+
+    min-width: 0;
 }
 
 footer p {
     margin: 0;
+
+    overflow-wrap: anywhere;
 }
 
 
@@ -228,10 +301,21 @@ footer p {
    6. PRODUCT GRID - FLEXBOX
    ========================================= */
 
+/*
+   The product grid remains Flexbox.
+   Cards wrap automatically on smaller screens.
+*/
+
 .product-grid {
     display: flex;
+
     flex-wrap: wrap;
-    gap: 24px;
+
+    gap: 20px;
+
+    width: 100%;
+
+    min-width: 0;
 }
 
 
@@ -240,14 +324,18 @@ footer p {
    ========================================= */
 
 .product-card {
-    flex: 1 1 240px;
+    flex: 1 1 100%;
+
+    min-width: 0;
 
     background-color: white;
 
     border-radius: 12px;
+
     border-left: 6px solid var(--brand);
 
     padding: 20px;
+
     margin-bottom: 0;
 
     box-shadow: 0 4px 12px rgba(47, 36, 51, 0.12);
@@ -256,21 +344,29 @@ footer p {
 .product-card h3 {
     color: var(--brand);
 
-    font-size: 1.35rem;
+    font-size: 1.3rem;
 
     margin-top: 0;
+
     margin-bottom: 10px;
+
+    overflow-wrap: anywhere;
 }
 
 .product-card p {
     color: var(--dark-ink);
+
+    overflow-wrap: anywhere;
 }
 
 .product-card img {
     display: block;
 
     width: 100%;
+
     max-width: 300px;
+
+    height: auto;
 
     margin: 15px auto;
 
@@ -283,6 +379,8 @@ footer p {
     font-weight: bold;
 
     text-decoration: none;
+
+    overflow-wrap: anywhere;
 }
 
 .product-card a:hover {
@@ -295,9 +393,13 @@ footer p {
    ========================================= */
 
 form {
+    width: 100%;
+
+    max-width: 100%;
+
     background-color: white;
 
-    padding: 25px;
+    padding: 16px;
 
     border-radius: 12px;
 
@@ -305,11 +407,15 @@ form {
 }
 
 fieldset {
+    width: 100%;
+
+    min-width: 0;
+
     border: 1px solid #cfc5d2;
 
     border-radius: 10px;
 
-    padding: 20px;
+    padding: 16px;
 
     margin-bottom: 20px;
 }
@@ -320,18 +426,26 @@ legend {
     font-weight: bold;
 
     padding: 0 8px;
+
+    max-width: 100%;
+
+    overflow-wrap: anywhere;
 }
 
 label {
     font-weight: bold;
+
+    overflow-wrap: anywhere;
 }
 
 input,
 select,
 textarea {
+    display: block;
+
     width: 100%;
 
-    max-width: 600px;
+    max-width: 100%;
 
     padding: 12px;
 
@@ -359,6 +473,7 @@ input:focus,
 textarea:focus,
 select:focus {
     outline: 3px solid var(--brand);
+
     outline-offset: 2px;
 }
 
@@ -383,6 +498,8 @@ button {
     font: inherit;
 
     font-weight: bold;
+
+    max-width: 100%;
 }
 
 button:hover {
@@ -391,6 +508,7 @@ button:hover {
 
 button:focus {
     outline: 3px solid var(--brand);
+
     outline-offset: 2px;
 }
 
@@ -405,11 +523,15 @@ table {
     border-collapse: collapse;
 
     background-color: white;
+
+    display: block;
+
+    overflow-x: auto;
 }
 
 th,
 td {
-    padding: 12px;
+    padding: 10px;
 
     border: 1px solid #cfc5d2;
 
@@ -420,4 +542,122 @@ th {
     background-color: var(--brand);
 
     color: white;
+}
+
+
+/* =========================================
+   11. TABLET AND UP
+   ========================================= */
+
+/*
+   At 700px and wider, enhance the mobile layout
+   into the desktop/tablet layout.
+*/
+
+@media (min-width: 700px) {
+
+    .page {
+        grid-template-columns: 220px 1fr;
+
+        grid-template-areas:
+            "masthead masthead"
+            "side     main"
+            "foot     foot";
+    }
+
+
+    /* -----------------------------------------
+       HEADER
+       ----------------------------------------- */
+
+    header {
+        flex-direction: row;
+
+        justify-content: space-between;
+
+        align-items: center;
+
+        padding: 30px 20px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+
+        text-align: left;
+    }
+
+    header nav {
+        width: auto;
+    }
+
+    header nav ul {
+        justify-content: flex-end;
+
+        gap: 20px;
+    }
+
+    header nav a {
+        padding: 8px 12px;
+    }
+
+
+    /* -----------------------------------------
+       SIDEBAR
+       ----------------------------------------- */
+
+    aside {
+        margin: 0;
+
+        padding: 24px;
+
+        align-self: start;
+    }
+
+
+    /* -----------------------------------------
+       MAIN
+       ----------------------------------------- */
+
+    main {
+        padding: 40px 20px;
+    }
+
+
+    /* -----------------------------------------
+       HERO
+       ----------------------------------------- */
+
+    .hero-section {
+        min-height: 200px;
+    }
+
+    .hero-section h2 {
+        font-size: 2rem;
+    }
+
+
+    /* -----------------------------------------
+       PRODUCT CARDS
+       ----------------------------------------- */
+
+    .product-grid {
+        gap: 24px;
+    }
+
+    .product-card {
+        flex: 1 1 240px;
+    }
+
+
+    /* -----------------------------------------
+       FORMS
+       ----------------------------------------- */
+
+    form {
+        padding: 25px;
+    }
+
+    fieldset {
+        padding: 20px;
+    }
 }
