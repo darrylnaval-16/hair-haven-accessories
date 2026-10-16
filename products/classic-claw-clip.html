@@ -1,67 +1,34 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Classic Claw Clip | Hair Haven Accessories</title>
-
     <link rel="stylesheet" href="../style.css">
-
 </head>
-
 <body>
-
     <div class="page">
 
-        <!-- HEADER -->
-
         <header>
-
-            <h1>Hair Haven Accessories</h1>
-
+            <h1 id="shopName">Hair Haven Accessories</h1>
             <nav>
-
                 <ul>
-
-                    <li>
-                        <a href="../index.html">Home</a>
-                    </li>
-
-                    <li>
-                        <a href="../about.html">About</a>
-                    </li>
-
-                    <li>
-                        <a href="../contact.html">Contact</a>
-                    </li>
-
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
                 </ul>
-
             </nav>
-
         </header>
 
-
-        <!-- SIDEBAR -->
-
         <aside>
-
             <h2>Product Guide</h2>
-
             <p>
                 Learn more about the Classic Claw Clip and its
                 available features before placing an order.
             </p>
 
             <h3>Product Information</h3>
-
             <ul>
                 <li>Medium Size</li>
                 <li>Neutral Shades</li>
@@ -70,22 +37,15 @@
             </ul>
 
             <h3>Price</h3>
-
             <p>
                 ₱50 per piece<br>
                 ₱190 per set
             </p>
-
         </aside>
 
-
-        <!-- MAIN -->
-
         <main>
-
             <section>
-
-                <h1>Classic Claw Clip</h1>
+                <h2>Classic Claw Clip</h2>
 
                 <img
                     src="../clamp.jpg"
@@ -94,21 +54,18 @@
                 >
 
                 <h2>Product Description</h2>
-
                 <p>
                     The Classic Claw Clip is a stylish and practical hair
                     accessory designed to keep hair neatly in place. Its simple
                     and versatile design makes it suitable for different
                     hairstyles and everyday occasions.
                 </p>
-
                 <p>
                     This claw clip can be used for quick and easy hairstyles
                     such as buns, half-up hairstyles, and simple updos. Its
                     neutral colors allow it to complement a variety of outfits
                     without being too distracting.
                 </p>
-
                 <p>
                     The Classic Claw Clip is a convenient choice for customers
                     who want an affordable hair accessory that combines
@@ -116,118 +73,84 @@
                     It is suitable for everyday use at school, work, casual
                     outings, and other occasions.
                 </p>
-
             </section>
 
-
             <section>
-
                 <h2>Product Specifications</h2>
 
-                <table border="1">
-
+                <table>
                     <tr>
                         <th>Specification</th>
                         <th>Details</th>
                     </tr>
-
                     <tr>
                         <td>Product Name</td>
                         <td>Classic Claw Clip</td>
                     </tr>
-
                     <tr>
                         <td>Type</td>
                         <td>Claw Hair Clip</td>
                     </tr>
-
                     <tr>
                         <td>Material</td>
                         <td>Durable Plastic</td>
                     </tr>
-
                     <tr>
                         <td>Size</td>
                         <td>Medium</td>
                     </tr>
-
                     <tr>
                         <td>Colour</td>
                         <td>Neutral Shades</td>
                     </tr>
-
                     <tr>
                         <td>Style</td>
                         <td>Classic and Minimalist</td>
                     </tr>
-
                     <tr>
                         <td>Suitable For</td>
-                        <td>
-                            Everyday Hairstyles and Casual Occasions
-                        </td>
+                        <td>Everyday Hairstyles and Casual Occasions</td>
                     </tr>
-
                     <tr>
                         <td>Price</td>
-                        <td>
-                            ₱50 per piece and ₱190 per set
-                        </td>
+                        <td>₱50 per piece and ₱190 per set</td>
                     </tr>
-
                 </table>
-
             </section>
 
-
-            <!-- ORDER ENQUIRY FORM -->
-
             <section>
-
                 <h2>Order Enquiry</h2>
-
                 <p>
                     Interested in ordering the Classic Claw Clip?
                     Fill out the form below to ask about your order.
                 </p>
 
-
                 <form id="orderForm">
-
                     <fieldset>
-
                         <legend>Order Details</legend>
 
-
                         <p>
-
-                            <label for="quantity">
-                                Quantity
-                            </label>
-
-                            <br>
-
+                            <label for="quantity">Quantity</label><br>
                             <input
                                 type="number"
                                 id="quantity"
                                 name="quantity"
                                 min="1"
                                 max="20"
+                                value="1"
                                 required
                             >
-
                         </p>
 
+                        <p>
+                            Subtotal at ₱50 per piece:
+                            <strong id="orderSubtotal">₱50.00</strong>
+                        </p>
 
                         <fieldset>
-
-                            <legend>
-                                How would you like your order delivered?
-                            </legend>
-
+                            <legend>How would you like your order delivered?</legend>
 
                             <p>
-
                                 <input
                                     type="radio"
                                     id="standardDelivery"
@@ -235,178 +158,94 @@
                                     value="standard"
                                     required
                                 >
-
-                                <label for="standardDelivery">
-                                    Standard Delivery
-                                </label>
-
+                                <label for="standardDelivery">Standard Delivery</label>
                             </p>
 
-
                             <p>
-
                                 <input
                                     type="radio"
                                     id="expressDelivery"
                                     name="delivery"
                                     value="express"
                                 >
-
-                                <label for="expressDelivery">
-                                    Express Delivery
-                                </label>
-
+                                <label for="expressDelivery">Express Delivery</label>
                             </p>
 
-
                             <p>
-
                                 <input
                                     type="radio"
                                     id="pickup"
                                     name="delivery"
                                     value="pickup"
                                 >
-
-                                <label for="pickup">
-                                    Store Pickup
-                                </label>
-
+                                <label for="pickup">Store Pickup</label>
                             </p>
-
                         </fieldset>
 
-
                         <fieldset>
-
-                            <legend>
-                                Optional Extras
-                            </legend>
-
+                            <legend>Optional Extras</legend>
 
                             <p>
-
                                 <input
                                     type="checkbox"
                                     id="giftWrapping"
                                     name="extras"
                                     value="gift-wrapping"
                                 >
-
-                                <label for="giftWrapping">
-                                    Gift Wrapping
-                                </label>
-
+                                <label for="giftWrapping">Gift Wrapping</label>
                             </p>
 
-
                             <p>
-
                                 <input
                                     type="checkbox"
                                     id="expressHandling"
                                     name="extras"
                                     value="express-handling"
                                 >
-
-                                <label for="expressHandling">
-                                    Express Handling
-                                </label>
-
+                                <label for="expressHandling">Express Handling</label>
                             </p>
 
-
                             <p>
-
                                 <input
                                     type="checkbox"
                                     id="thankYouCard"
                                     name="extras"
                                     value="thank-you-card"
                                 >
-
-                                <label for="thankYouCard">
-                                    Thank-you Card
-                                </label>
-
+                                <label for="thankYouCard">Thank-you Card</label>
                             </p>
-
                         </fieldset>
 
-
                         <p>
-
-                            <label for="email">
-                                Contact Email
-                            </label>
-
-                            <br>
-
+                            <label for="email">Contact Email</label><br>
                             <input
                                 type="email"
                                 id="email"
                                 name="email"
                                 required
                             >
-
                         </p>
-
 
                         <p>
-
-                            <button type="submit">
-                                Submit Order Enquiry
-                            </button>
-
+                            <button type="submit">Submit Order Enquiry</button>
                         </p>
-
                     </fieldset>
-
                 </form>
-
 
                 <p id="orderSuccessMessage" hidden>
                     Your order enquiry has been sent successfully!
                 </p>
-
             </section>
-
         </main>
 
-
-        <!-- FOOTER -->
-
         <footer>
-
-            <p>
-                &copy; 2026 Hair Haven Accessories. Created by Darryl Naval.
+            <p id="copyright">
+                © 2026 Hair Haven Accessories. Created by Darryl Naval.
             </p>
-
         </footer>
 
     </div>
 
-
-    <script>
-
-        const orderForm = document.getElementById("orderForm");
-
-        const orderSuccessMessage =
-            document.getElementById("orderSuccessMessage");
-
-
-        orderForm.addEventListener("submit", function(event) {
-
-            event.preventDefault();
-
-            orderSuccessMessage.hidden = false;
-
-            orderForm.reset();
-
-        });
-
-    </script>
-
+    <script src="../script.js"></script>
 </body>
-
 </html>
