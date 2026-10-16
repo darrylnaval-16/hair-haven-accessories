@@ -10,6 +10,7 @@
 <body>
     <div class="page">
 
+        <!-- HEADER -->
         <header>
             <h1 id="shopName">Hair Haven Accessories</h1>
             <nav>
@@ -21,6 +22,7 @@
             </nav>
         </header>
 
+        <!-- SIDEBAR -->
         <aside>
             <h2>Shop Guide</h2>
             <p>
@@ -43,15 +45,21 @@
             </p>
         </aside>
 
+        <!-- MAIN CONTENT -->
         <main>
             <section class="hero-section">
                 <h2>Accessorize Your Hair, Elevate Your Look</h2>
             </section>
 
+            <!-- PRODUCTS -->
             <section class="products-section">
                 <h2>Our Products</h2>
 
-                <p>Number of products: <strong id="productCount">0</strong></p>
+                <p>
+                    Number of products:
+                    <strong id="productCount">0</strong>
+                </p>
+
                 <p>
                     Total of listed product prices:
                     <strong id="productTotal">₱0.00</strong>
@@ -63,8 +71,8 @@
                         <h3>Everyday Hair Ties</h3>
                         <p>₱99</p>
                         <p>
-                            Soft and comfortable hair ties designed for everyday
-                            hairstyles and secure all-day use.
+                            Soft and comfortable hair ties designed for
+                            everyday hairstyles and secure all-day use.
                         </p>
                         <img
                             src="hairtie.jpg"
@@ -77,12 +85,13 @@
                         <h3>Classic Claw Clip</h3>
                         <p>₱50 per piece</p>
                         <p>
-                            Stylish and versatile claw clips that keep your hair
-                            neatly in place while adding a simple touch of elegance.
+                            Stylish and versatile claw clips that keep your
+                            hair neatly in place while adding a simple touch
+                            of elegance.
                         </p>
                         <img
                             src="clamp.jpg"
-                            alt="Collection of neutral-colored claw clips in different shapes and designs"
+                            alt="Collection of neutral-colored claw clips"
                             width="300"
                         >
                         <p>
@@ -96,12 +105,12 @@
                         <h3>Minimalist Snap Clips</h3>
                         <p>₱80 per set</p>
                         <p>
-                            Simple and lightweight snap clips available in neutral
-                            shades, perfect for everyday styling.
+                            Simple and lightweight snap clips available in
+                            neutral shades, perfect for everyday styling.
                         </p>
                         <img
                             src="snapclip.jpg"
-                            alt="Set of neutral-colored snap hair clips arranged on a white tray"
+                            alt="Set of neutral-colored snap hair clips"
                             width="300"
                         >
                     </article>
@@ -110,20 +119,77 @@
                         <h3>Satin Scrunchie Set</h3>
                         <p>₱30 per piece</p>
                         <p>
-                            A set of soft satin scrunchies that adds a polished and
+                            Soft satin scrunchies that add a polished and
                             elegant look to any hairstyle.
                         </p>
                         <img
                             src="scrunchies.jpg"
-                            alt="Three satin scrunchies in cream, beige, and brown colors inside a box"
+                            alt="Satin scrunchies in cream, beige, and brown"
                             width="300"
                         >
                     </article>
 
                 </div>
             </section>
+
+            <!-- ACTIVITY 8.4: SHOP DECISIONS -->
+            <section class="shop-decisions">
+                <h2>Smart Shop Decisions</h2>
+                <p>
+                    Check product availability, delivery fees, and
+                    today's shop status.
+                </p>
+
+                <!-- DECISION 1: STOCK STATUS -->
+                <article class="decision-card">
+                    <h3>1. Stock Status</h3>
+                    <p>
+                        Product: Classic Claw Clip
+                    </p>
+                    <p>
+                        Available stock:
+                        <strong id="stockCount">0</strong>
+                    </p>
+                    <p>
+                        Status:
+                        <strong id="stockStatus">Checking stock...</strong>
+                    </p>
+                </article>
+
+                <!-- DECISION 2: FREE DELIVERY -->
+                <article class="decision-card">
+                    <h3>2. Free Delivery Check</h3>
+                    <p>
+                        Order subtotal:
+                        <strong id="orderTotal">₱0.00</strong>
+                    </p>
+                    <p>
+                        Membership:
+                        <strong id="memberStatus">Checking...</strong>
+                    </p>
+                    <p>
+                        Delivery fee:
+                        <strong id="deliveryFee">₱0.00</strong>
+                    </p>
+                    <p>
+                        Final total:
+                        <strong id="finalTotal">₱0.00</strong>
+                    </p>
+                    <p id="deliveryMessage"></p>
+                </article>
+
+                <!-- DECISION 3: SHOP STATUS -->
+                <article class="decision-card">
+                    <h3>3. Shop Status</h3>
+                    <p>
+                        Today's status:
+                        <strong id="shopStatus">Checking...</strong>
+                    </p>
+                </article>
+            </section>
         </main>
 
+        <!-- FOOTER -->
         <footer>
             <p id="copyright">
                 © 2026 Hair Haven Accessories. Created by Darryl Naval.
